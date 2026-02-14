@@ -1,0 +1,824 @@
+// ==================================================
+// BLOK COLOR SYSTEM - Material Design 3
+// Updated from Figma export
+// ==================================================
+
+@use "sass:map";
+
+// ==================================================
+// REFERENCE PALETTES
+// ==================================================
+$primary: (
+  0: #000000,
+  10: #001b3e,
+  20: #003064,
+  30: #00468d,
+  40: #1e5dae,
+  50: #3f77c9,
+  60: #5c91e5,
+  70: #7aacff,
+  80: #aac7ff,
+  90: #d6e3ff,
+  95: #ecf0ff,
+  99: #fdfbff,
+  100: #ffffff) !default;
+
+$secondary: (
+  0: #000000,
+  10: #131c2b,
+  20: #283141,
+  30: #3e4759,
+  40: #565f71,
+  50: #6e778a,
+  60: #8891a5,
+  70: #a2abc0,
+  80: #bec7dc,
+  90: #dae2f9,
+  95: #ecf0ff,
+  100: #ffffff) !default;
+
+$tertiary: (
+  0: #000000,
+  10: #0b006b,
+  20: #1904a5,
+  30: #342fb9,
+  40: #4d4bd1,
+  50: #6766ec,
+  60: #8383ff,
+  70: #a2a2ff,
+  80: #c2c1ff,
+  90: #e2dfff,
+  95: #f2efff,
+  99: #fffbff,
+  100: #ffffff) !default;
+
+$error: (
+  0: #000000,
+  10: #410002,
+  20: #690005,
+  30: #93000a,
+  40: #ba1a1a,
+  50: #de3730,
+  60: #ff5449,
+  70: #ff897d,
+  80: #ffb4ab,
+  90: #ffdad6,
+  95: #ffedea,
+  99: #fffbff,
+  100: #ffffff) !default;
+
+$neutral: (
+  0: #000000,
+  10: #1a1b1e,
+  20: #2f3033,
+  30: #46474a,
+  40: #5e5e62,
+  50: #77777a,
+  60: #909094,
+  70: #ababaf,
+  80: #c7c6ca,
+  90: #e3e2e6,
+  95: #f1f0f4,
+  99: #fdfbff,
+  100: #ffffff) !default;
+
+$neutral-variant: (
+  0: #000000,
+  10: #181c22,
+  20: #2d3038,
+  30: #44474e,
+  40: #5b5e66,
+  50: #74777f,
+  60: #8e9099,
+  70: #a9abb4,
+  80: #c4c6d0,
+  90: #e0e2ec,
+  95: #eff0fa,
+  100: #ffffff) !default;
+
+// ==================================================
+// CUSTOM COLORS (kept from original)
+// ==================================================
+$custom: (
+  "blue": #0152fd,
+  "brown": #78403c,
+  "gray": #787773,
+  "green": #386348,
+  "orange": #e65838,
+  "pink": #ad557a,
+  "yellow": #dab318,
+  "purple": #6c4e9b,
+  "red": #b83236) !default;
+
+$custom-light: (
+  "blue": #b3cbfe,
+  "brown": #d6c6c4,
+  "gray": #d6d6d5,
+  "green": #c3d0c8,
+  "orange": #f7cdc3,
+  "pink": #e6ccd7,
+  "yellow": #f4e8ba,
+  "purple": #d3cae1,
+  "red": #eac1c3) !default;
+
+// ==================================================
+// SYSTEM COLORS - LIGHT THEME
+// ==================================================
+$light-theme: (
+  primary: #1e5dae,
+  on-primary: #ffffff,
+  primary-container: #d6e3ff,
+  on-primary-container: #001b3e,
+  secondary: #565f71,
+  on-secondary: #ffffff,
+  secondary-container: #dae2f9,
+  on-secondary-container: #131c2b,
+  secondary-fixed: #565f71,
+  tertiary: #4d4bd1,
+  on-tertiary: #ffffff,
+  tertiary-container: #e2dfff,
+  on-tertiary-container: #0b006b,
+  error: #ba1a1a,
+  error-container: #ffdad6,
+  on-error: #ffffff,
+  on-error-container: #410002,
+  background: #fdfbff,
+  on-background: #1a1b1e,
+  surface: #fdfbff,
+  on-surface: #1a1b1e,
+  surface-variant: #e0e2ec,
+  on-surface-variant: #44474e,
+  outline: #74777f,
+  outline-variant: #c4c6d0,
+  surface-1: rgba(30, 93, 174, 0.05),
+  surface-2: rgba(30, 93, 174, 0.08),
+  surface-3: rgba(30, 93, 174, 0.11),
+  surface-4: rgba(30, 93, 174, 0.12),
+  surface-5: rgba(30, 93, 174, 0.14)) !default;
+
+// ==================================================
+// SYSTEM COLORS - DARK THEME
+// ==================================================
+$dark-theme: (
+  primary: #aac7ff,
+  on-primary: #003064,
+  primary-container: #00468d,
+  on-primary-container: #d6e3ff,
+  secondary: #bec7dc,
+  on-secondary: #283141,
+  secondary-container: #3e4759,
+  on-secondary-container: #dae2f9,
+  secondary-fixed: #bec7dc,
+  tertiary: #c2c1ff,
+  on-tertiary: #1904a5,
+  tertiary-container: #342fb9,
+  on-tertiary-container: #e2dfff,
+  error: #ffb4ab,
+  error-container: #93000a,
+  on-error: #690005,
+  on-error-container: #ffdad6,
+  background: #1a1b1e,
+  on-background: #e3e2e6,
+  surface: #1a1b1e,
+  on-surface: #c7c6ca,
+  surface-variant: #44474e,
+  on-surface-variant: #c4c6d0,
+  outline: #8e9099,
+  outline-variant: #44474e,
+  surface-1: rgba(170, 199, 255, 0.05),
+  surface-2: rgba(170, 199, 255, 0.08),
+  surface-3: rgba(170, 199, 255, 0.11),
+  surface-4: rgba(170, 199, 255, 0.12),
+  surface-5: rgba(170, 199, 255, 0.14)) !default;
+
+// ==================================================
+// STATE LAYERS - Light/Dark Theme
+// ==================================================
+$state-layers-light: (
+  // Primary state layers
+  primary-008: rgba(95, 94, 91, 0.08),
+  // #5f5e5b14
+  primary-012: rgba(95, 94, 91, 0.12),
+  // #5f5e5b1e  
+  primary-016: rgba(95, 94, 91, 0.16),
+  // #5f5e5b28
+
+  // On Primary state layers
+  on-primary-008: rgba(255, 255, 255, 0.08),
+  on-primary-012: rgba(255, 255, 255, 0.12),
+  on-primary-016: rgba(255, 255, 255, 0.16),
+
+  // Primary Container state layers
+  primary-container-008: rgba(227, 226, 225, 0.08),
+  primary-container-012: rgba(227, 226, 225, 0.12),
+  primary-container-016: rgba(227, 226, 225, 0.16),
+
+  // On Primary Container state layers
+  on-primary-container-008: rgba(29, 27, 25, 0.08),
+  on-primary-container-012: rgba(29, 27, 25, 0.12),
+  on-primary-container-016: rgba(29, 27, 25, 0.16),
+
+  // Surface state layers
+  on-surface-008: rgba(29, 27, 25, 0.08),
+  on-surface-012: rgba(29, 27, 25, 0.12),
+  on-surface-016: rgba(29, 27, 25, 0.16),
+
+  // Surface Variant state layers
+  on-surface-variant-008: rgba(72, 71, 68, 0.08),
+  on-surface-variant-012: rgba(72, 71, 68, 0.12),
+  on-surface-variant-016: rgba(72, 71, 68, 0.16)) !default;
+
+$state-layers-dark: (
+  // Primary state layers (dark)
+  primary-008: rgba(198, 198, 197, 0.08),
+  primary-012: rgba(198, 198, 197, 0.12),
+  primary-016: rgba(198, 198, 197, 0.16),
+
+  // On Primary state layers (dark)
+  on-primary-008: rgba(29, 27, 25, 0.08),
+  on-primary-012: rgba(29, 27, 25, 0.12),
+  on-primary-016: rgba(29, 27, 25, 0.16),
+
+  // Primary Container state layers (dark)
+  primary-container-008: rgba(72, 71, 68, 0.08),
+  primary-container-012: rgba(72, 71, 68, 0.12),
+  primary-container-016: rgba(72, 71, 68, 0.16),
+
+  // On Primary Container state layers (dark)
+  on-primary-container-008: rgba(227, 226, 225, 0.08),
+  on-primary-container-012: rgba(227, 226, 225, 0.12),
+  on-primary-container-016: rgba(227, 226, 225, 0.16),
+
+  // Surface state layers (dark)
+  on-surface-008: rgba(227, 226, 225, 0.08),
+  on-surface-012: rgba(227, 226, 225, 0.12),
+  on-surface-016: rgba(227, 226, 225, 0.16),
+
+  // Surface Variant state layers (dark)
+  on-surface-variant-008: rgba(198, 198, 197, 0.08),
+  on-surface-variant-012: rgba(198, 198, 197, 0.12),
+  on-surface-variant-016: rgba(198, 198, 197, 0.16)) !default;
+
+$custom-state-layers: (
+  blue-030: rgba(1, 82, 253, 0.3),
+  // #0152fd4c
+  brown-030: rgba(120, 64, 60, 0.3),
+  // #78403c4c
+  gray-030: rgba(120, 119, 115, 0.3),
+  // #7877734c
+  green-030: rgba(56, 99, 72, 0.3),
+  // #3863484c
+  orange-030: rgba(230, 88, 56, 0.3),
+  // #e658384c
+  pink-030: rgba(173, 85, 122, 0.3),
+  // #ad557a4c
+  yellow-030: rgba(218, 179, 24, 0.3),
+  // #dab3184c
+  purple-030: rgba(108, 78, 155, 0.3),
+  // #6c4e9b4c
+  red-030: rgba(184, 50, 54, 0.3) // #b832364c
+  ) !default;
+
+// ==================================================
+// COMPOSITE COLORS - EXTENDED
+// ==================================================
+$composite-colors-light: (
+  // Surface elevations (Neutral99 + Primary40 mix)
+  surface-1: #f5f4f4,
+  // paletteCompositeNeutral99AndPrimary40005
+  surface-2: #f0efef,
+  // paletteCompositeNeutral99AndPrimary40008  
+  surface-3: #ecebea,
+  // paletteCompositeNeutral99AndPrimary40011
+  surface-4: #eae9e9,
+  // paletteCompositeNeutral99AndPrimary40012
+  surface-5: #e7e6e5,
+  // paletteCompositeNeutral99AndPrimary40014
+
+  // Neutral99 + Primary10 mix (light mode only)
+  neutral99-primary10-008: #f1f0ef,
+  // paletteCompositeNeutral99AndPrimary10008
+  neutral99-primary10-012: #e9e8e8,
+  // paletteCompositeNeutral99AndPrimary10012
+  neutral99-primary10-016: #d9d8d8,
+  // paletteCompositeNeutral99AndPrimary10016
+
+  // Primary3 + Neutral100 mix (light mode only)
+  primary3-neutral100-008: #1f1d1b,
+  // paletteCompositePrimary3AndNeutral100008
+  primary3-neutral100-012: #282725,
+  // paletteCompositePrimary3AndNeutral100012
+  primary3-neutral100-016: #32302f,
+  // paletteCompositePrimary3AndNeutral100016
+
+  // Secondary90 + Neutral10 mix (light mode only)
+  secondary90-neutral10-008: #bcd6ed,
+  // paletteCompositeSecondary90AndNeutral10008
+  secondary90-neutral10-012: #b5cee3,
+  // paletteCompositeSecondary90AndNeutral10012
+  secondary90-neutral10-016: #aec6da,
+  // paletteCompositeSecondary90AndNeutral10016
+
+  // error90 + error10 mix (light mode only)
+  error90-error10-008: #F0C9C5,
+  // paletteCompositeError90AndError10008
+  error90-error10-012: #E8C0BD,
+  // paletteCompositeError90AndError10012
+  error90-error10-016: #E1B7B4,
+  // paletteCompositeError90AndError10016
+
+
+
+  ) !default;
+
+$composite-colors-dark: (
+  // Surface elevations (Neutral10 + Primary80 mix)
+  surface-1: #22201e,
+  // paletteCompositeNeutral10AndPrimary80005
+  surface-2: #242220,
+  // paletteCompositeNeutral10AndPrimary80008
+  surface-3: #272523,
+  // paletteCompositeNeutral10AndPrimary80011
+  surface-4: #282624,
+  // paletteCompositeNeutral10AndPrimary80012
+  surface-5: #2a2826,
+  // paletteCompositeNeutral10AndPrimary80014
+
+  // Note: The other composite colors appear to be light-mode only in your Figma export
+  // If you need dark versions, we can create them or they might be defined elsewhere
+  ) !default;
+
+
+// ==================================================
+// SYSTEM COLORS - LIGHT THEME
+// ==================================================
+$light-theme: (
+  primary: #0b0907,
+  on-primary: #ffffff,
+  primary-container: #e3e2e1,
+  on-primary-container: #1d1b19,
+
+  secondary: #004ced,
+  on-secondary: #ffffff,
+  secondary-container: #cae6ff,
+  on-secondary-container: #000000,
+  secondary-fixed: #216dff,
+
+  tertiary: #944262,
+  on-tertiary: #ffffff,
+  tertiary-container: #f0dae5,
+  on-tertiary-container: #320f1d,
+
+  error: #ba1a1a,
+  error-container: #ffdad6,
+  on-error: #ffffff,
+  on-error-container: #410002,
+
+  background: #fdfcfc,
+  on-background: #1d1b19,
+  surface: #fdfcfc,
+  on-surface: #1d1b19,
+  surface-variant: #e3e2e1,
+  on-surface-variant: #484744,
+
+  outline: #787773,
+  outline-variant: #c6c6c5,
+
+  surface-1: #f5f4f4,
+  surface-2: #f0efef,
+  surface-3: #ecebea,
+  surface-4: #eae9e9,
+  surface-5: #e7e6e5) !default;
+
+// ==================================================
+// SYSTEM COLORS - DARK THEME  
+// ==================================================
+$dark-theme: (
+  primary: #e3e2e1,
+  on-primary: #1d1b19,
+  primary-container: #484744,
+  on-primary-container: #e3e2e1,
+
+  secondary: #8bceff,
+  on-secondary: #041847,
+  secondary-container: #173f9f,
+  on-secondary-container: #cae6ff,
+  secondary-fixed: #216dff,
+
+  tertiary: #e5bcd1,
+  on-tertiary: #4b2432,
+  tertiary-container: #6b364a,
+  on-tertiary-container: #f0dae5,
+
+  error: #ffb4ab,
+  error-container: #690005,
+  on-error: #93000a,
+  on-error-container: #ffdad6,
+
+  background: #1d1b19,
+  on-background: #e3e2e1,
+  surface: #1d1b19,
+  on-surface: #e3e2e1,
+  surface-variant: #484744,
+  on-surface-variant: #c6c6c5,
+
+  outline: #91918e,
+  outline-variant: #484744,
+
+  surface-1: #22201e,
+  surface-2: #242220,
+  surface-3: #272523,
+  surface-4: #282624,
+  surface-5: #2a2826) !default;
+
+// ==================================================
+// UTILITY FUNCTIONS
+// ==================================================
+@function get-color($palette, $tone: 50) {
+  @return map.get($palette, $tone
+);
+}
+
+@function primary($tone: 50) {
+  @return get-color($primary, $tone);
+}
+
+@function secondary($tone: 50) {
+  @return get-color($secondary, $tone);
+}
+
+@function tertiary($tone: 50) {
+  @return get-color($tertiary, $tone);
+}
+
+@function custom($color) {
+  @return map.get($custom, $color);
+}
+
+@function theme($property, $is-dark: false) {
+  $theme-map: if($is-dark, $dark-theme, $light-theme);
+  @return map.get($theme-map, $property);
+}
+
+// ==================================================
+// CSS CUSTOM PROPERTIES (CSS Variables)
+// ==================================================
+:root {
+
+  // Light theme variables
+  @each $key, $value in $light-theme {
+    --color-#{$key}: #{$value};
+  }
+
+  // Primary palette variables
+  @each $tone, $color in $primary {
+    --color-primary-#{$tone}: #{$color};
+  }
+
+  // Secondary palette variables
+  @each $tone, $color in $secondary {
+    --color-secondary-#{$tone}: #{$color};
+  }
+
+  // Tertiary palette variables
+  @each $tone, $color in $tertiary {
+    --color-tertiary-#{$tone}: #{$color};
+  }
+
+  // Error palette variables
+  @each $tone, $color in $error {
+    --color-error-#{$tone}: #{$color};
+  }
+
+  // Neutral palette variables
+  @each $tone, $color in $neutral {
+    --color-neutral-#{$tone}: #{$color};
+  }
+
+  // Custom colors
+  @each $key, $value in $custom {
+    --color-custom-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $custom-light {
+    --color-custom-#{$key}-light: #{$value};
+  }
+
+  // Composite colors
+  @each $key, $value in $composite-colors-light {
+    --color-composite-#{$key}: #{$value};
+  }
+
+  // Light theme state layers
+  @each $key, $value in $state-layers-light {
+    --state-layer-#{$key}: #{$value};
+  }
+
+
+  // Custom color state layers
+  @each $key, $value in $custom-state-layers {
+    --color-custom-#{$key}: #{$value};
+  }
+}
+
+
+[data-theme="dark"] {
+
+  // Dark theme variables
+  @each $key, $value in $dark-theme {
+    --color-#{$key}: #{$value};
+  }
+
+  // Dark composite colors
+  @each $key, $value in $composite-colors-dark {
+    --color-composite-#{$key}: #{$value};
+  }
+
+  // Note: Palette variables remain the same in dark theme
+  // since they're absolute color values, not theme-dependent
+}
+
+// ==================================================
+// UTILITY CLASSES
+// ==================================================
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-tertiary);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+// Custom color utilities
+@each $name, $color in $custom {
+  .text-#{$name} {
+    color: #{$color};
+  }
+
+  .bg-#{$name} {
+    background-color: #{$color};
+  }
+
+  .border-#{$name} {
+    border-color: #{$color};
+  }
+}
+
+
+// ==================================================
+// TYPOGRAPHY SCALE - Curium Design System
+// ==================================================
+
+// Font families
+$font-display: 'Noto Sans', sans-serif !default;
+$font-body: 'Noto Sans', sans-serif !default;
+
+// Font weight mapping
+$font-weights: (
+  light: 300,
+  regular: 500,
+  medium: 500,
+  bold: 700) !default;
+
+$typography: (
+  // Display styles (Noto Sans font)
+  display-large: (font-family: $font-display,
+    font-weight: map.get($font-weights, light),
+    font-size: 3.5625rem, // 57px
+    letter-spacing: 0,
+    line-height: 1.2),
+  display-medium: (font-family: $font-display,
+    font-weight: map.get($font-weights, light),
+    font-size: 2.8125rem, // 45px
+    letter-spacing: 0,
+    line-height: 1.2),
+  display-small: (font-family: $font-display,
+    font-weight: map.get($font-weights, light),
+    font-size: 2.25rem, // 36px
+    letter-spacing: 0,
+    line-height: 1.2),
+
+  // Headline styles (Noto Sans Regular)
+  headline-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 2rem, // 32px
+    letter-spacing: 0,
+    line-height: 1.3),
+  headline-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1.75rem, // 28px
+    letter-spacing: 0,
+    line-height: 1.3),
+  headline-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1.5rem, // 24px
+    letter-spacing: 0,
+    line-height: 1.3),
+
+  // Title Bold styles
+  title-bold-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 1.375rem, // 22px
+    letter-spacing: 0,
+    line-height: 1.4),
+  title-bold-largish: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 1.25rem, // 20px
+    letter-spacing: 0,
+    line-height: 1.4),
+  title-bold-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 1rem, // 16px
+    letter-spacing: 0.15px,
+    line-height: 1.5),
+  title-bold-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 0.875rem, // 14px
+    letter-spacing: 0.1px,
+    line-height: 1.5),
+
+  // Title Regular styles
+  title-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1.375rem, // 22px
+    letter-spacing: 0,
+    line-height: 1.4),
+  title-largish: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1.25rem, // 20px
+    letter-spacing: 0,
+    line-height: 1.4),
+  title-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1rem, // 16px
+    letter-spacing: 0.15px,
+    line-height: 1.5),
+  title-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 0.875rem, // 14px
+    letter-spacing: 0.1px,
+    line-height: 1.5),
+
+  // Label Bold styles - UPDATED SIZES
+  label-bold-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 1rem, // 16px (was 14px)
+    letter-spacing: 0.1px,
+    line-height: 1.4),
+  label-bold-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 0.875rem, // 14px (was 12px)
+    letter-spacing: 0.5px,
+    line-height: 1.4),
+  label-bold-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 0.75rem, // 12px (was 11px)
+    letter-spacing: 0.5px,
+    line-height: 1.4),
+
+
+ // Label medium styles - UPDATED SIZES
+  label-medium-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 1rem, // 16px (was 14px)
+    letter-spacing: 0.1px,
+    line-height: 1.4),
+  label-medium-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 0.875rem, // 14px (was 12px)
+    letter-spacing: 0.5px,
+    line-height: 1.4),
+  label-medium-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 0.75rem, // 12px (was 11px)
+    letter-spacing: 0.5px,
+    line-height: 1.4),
+
+
+
+  // Label Regular styles - UPDATED SIZES  
+  label-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1rem, // 16px (was 14px)
+    letter-spacing: 0.1px,
+    line-height: 1.4),
+  label-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 0.875rem, // 14px (was 12px)
+    letter-spacing: 0.5px,
+    line-height: 1.4),
+  label-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 0.75rem, // 12px (was 11px)
+    letter-spacing: 0.5px,
+    line-height: 1.4),
+
+  // Body bold
+  body-bold-larger: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 1.125rem, // 18px
+    letter-spacing: 0,
+    line-height: 1.6),
+  body-bold-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 1rem, // 16px
+    letter-spacing: 0.5px,
+    line-height: 1.6),
+  body-bold-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 0.875rem, // 14px
+    letter-spacing: 0.25px,
+    line-height: 1.5),
+  body-bold-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, bold),
+    font-size: 0.75rem, // 12px
+    letter-spacing: 0.4px,
+    line-height: 1.5),
+
+     // Body medium
+  body-medium-larger: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 1.125rem, // 18px
+    letter-spacing: 0,
+    line-height: 1.6),
+  body-medium-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 1rem, // 16px
+    letter-spacing: 0.5px,
+    line-height: 1.6),
+  body-medium-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 0.875rem, // 14px
+    letter-spacing: 0.25px,
+    line-height: 1.5),
+  body-medium-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, medium),
+    font-size: 0.75rem, // 12px
+    letter-spacing: 0.4px,
+    line-height: 1.5),
+
+
+  // Body regular
+  body-larger: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1.125rem, // 18px
+    letter-spacing: 0,
+    line-height: 1.6),
+  body-large: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 1rem, // 16px
+    letter-spacing: 0.5px,
+    line-height: 1.6),
+  body-medium: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 0.875rem, // 14px
+    letter-spacing: 0.25px,
+    line-height: 1.5),
+  body-small: (font-family: $font-body,
+    font-weight: map.get($font-weights, regular),
+    font-size: 0.75rem, // 12px
+    letter-spacing: 0.4px,
+    line-height: 1.5)) !default;
+
+// Generate CSS custom properties for typography
+:root {
+  @each $name, $props in $typography {
+    @each $prop, $value in $props {
+      --text-#{$name}-#{$prop}: #{$value};
+    }
+  }
+}
+
+// Typography utility classes
+@each $name, $props in $typography {
+  .text-#{$name} {
+    @each $prop, $value in $props {
+      #{$prop}: var(--text-#{$name}-#{$prop}
+    );
+  }
+}
+}
