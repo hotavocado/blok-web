@@ -55,7 +55,7 @@ const RiveAvatar = ({ onNavigate, onSignOut }) => {
     <Box sx={{
       position: 'fixed',
       bottom: '16px',
-      right: '16px',
+      left: '16px',
       width: '240px',
       height: '240px',
       zIndex: 1000,

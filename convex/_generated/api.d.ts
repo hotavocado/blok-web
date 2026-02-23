@@ -11,6 +11,7 @@
 import type * as auth from "../auth.js";
 import type * as chat from "../chat.js";
 import type * as events from "../events.js";
+import type * as friends from "../friends.js";
 import type * as groups from "../groups.js";
 import type * as users from "../users.js";
 
@@ -24,6 +25,7 @@ declare const fullApi: ApiFromModules<{
   auth: typeof auth;
   chat: typeof chat;
   events: typeof events;
+  friends: typeof friends;
   groups: typeof groups;
   users: typeof users;
 }>;

@@ -333,15 +333,15 @@ $composite-colors-light: (
 
 $composite-colors-dark: (
   // Surface elevations (Neutral10 + Primary80 mix)
-  surface-1: #22201e,
+  surface-1: #212429,
   // paletteCompositeNeutral10AndPrimary80005
-  surface-2: #242220,
+  surface-2: #262930,
   // paletteCompositeNeutral10AndPrimary80008
-  surface-3: #272523,
+  surface-3: #2A2E37,
   // paletteCompositeNeutral10AndPrimary80011
-  surface-4: #282624,
+  surface-4: #2B3039,
   // paletteCompositeNeutral10AndPrimary80012
-  surface-5: #2a2826,
+  surface-5: #2E333E,
   // paletteCompositeNeutral10AndPrimary80014
 
   // Note: The other composite colors appear to be light-mode only in your Figma export
@@ -456,8 +456,11 @@ $dark-theme: (
 }
 
 @function theme($property, $is-dark: false) {
-  $theme-map: if($is-dark, $dark-theme, $light-theme);
-  @return map.get($theme-map, $property);
+  @if $is-dark {
+    @return map.get($dark-theme, $property);
+  } @else {
+    @return map.get($light-theme, $property);
+  }
 }
 
 // ==================================================

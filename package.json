@@ -13,6 +13,7 @@
     "@rive-app/react-webgl2": "^4.27.0",
     "@rive-app/webgl2": "^2.35.0",
     "convex": "^1.31.7",
+    "date-fns": "^4.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.2",

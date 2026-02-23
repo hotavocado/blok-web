@@ -63,4 +63,30 @@ export default defineSchema({
     .index("by_event", ["eventId"])
     .index("by_user", ["userId"])
     .index("by_event_and_user", ["eventId", "userId"]),
+
+  // Friend requests table
+  friendRequests: defineTable({
+    fromUserId: v.id("users"), // User who sent the request
+    toUserId: v.id("users"),   // User who received the request
+    status: v.union(
+      v.literal("pending"),
+      v.literal("accepted"),
+      v.literal("ignored")
+    ),
+    createdAt: v.number(),
+  })
+    .index("by_from_user", ["fromUserId"])
+    .index("by_to_user", ["toUserId"])
+    .index("by_from_and_to", ["fromUserId", "toUserId"])
+    .index("by_status", ["status"]),
+
+  // Friends table (accepted friendships)
+  friends: defineTable({
+    userId1: v.id("users"), // Always the smaller ID
+    userId2: v.id("users"), // Always the larger ID
+    createdAt: v.number(),
+  })
+    .index("by_user1", ["userId1"])
+    .index("by_user2", ["userId2"])
+    .index("by_users", ["userId1", "userId2"]),
 });

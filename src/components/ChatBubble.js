@@ -64,11 +64,11 @@ const ChatBubble = ({ onClose, onExecuteAction }) => {
     <Box sx={{
       position: 'absolute',
       bottom: '100%',
-      right: 0,
+      left: 0,
       marginBottom: '4px',
       width: '380px',
       height: '480px',
-      backgroundColor: 'var(--color-surface-1)',
+      backgroundColor: 'var(--color-composite-surface-1)',
       borderRadius: '28px',
       display: 'flex',
       flexDirection: 'column',
@@ -117,7 +117,7 @@ const ChatBubble = ({ onClose, onExecuteAction }) => {
               borderRadius: '16px',
               backgroundColor: msg.role === 'user' 
                 ? 'var(--color-primary-container)' 
-                : 'var(--color-surface-2)',
+                : 'var(--color-composite-surface-2)',
               color: msg.role === 'user'
                 ? 'var(--color-on-primary-container)'
                 : 'var(--color-on-surface)',
@@ -153,7 +153,7 @@ const ChatBubble = ({ onClose, onExecuteAction }) => {
           sx={{
             '& .MuiOutlinedInput-root': {
               color: 'var(--color-on-surface)',
-              backgroundColor: 'var(--color-surface-2)',
+              backgroundColor: 'var(--color-composite-surface-2)',
               borderRadius: '12px',
               '& fieldset': {
                 borderColor: 'var(--color-outline-variant)',
