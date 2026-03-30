@@ -20,7 +20,7 @@ const RiveAvatar = ({ onNavigate, onSignOut }) => {
     if (!canvasRef.current) return;
 
     const r = new Rive({
-      src: '/assets/rive/2992-6574-blobby-cat.riv',
+      src: `${process.env.PUBLIC_URL}/assets/rive/2992-6574-blobby-cat.riv`,
       canvas: canvasRef.current,
       artboard: 'Cat Artboard',
       stateMachines: 'State Machine',
