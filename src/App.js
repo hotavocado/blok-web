@@ -18,10 +18,13 @@ const App = () => {
   return (
     <ClerkProvider 
       publishableKey={process.env.REACT_APP_CLERK_PUBLISHABLE_KEY}
+      signInFallbackRedirectUrl="/blok-web/dashboard"
+      signUpFallbackRedirectUrl="/blok-web/dashboard"
+      afterSignOutUrl="/blok-web"
     >
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
         <ThemeProvider theme={theme}>
-          <Router>
+          <Router basename="/blok-web">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/dashboard" element={<Dashboard />} />

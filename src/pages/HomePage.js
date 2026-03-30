@@ -20,8 +20,8 @@ const HomePage = () => {
     try {
       await signIn.authenticateWithRedirect({
         strategy: 'oauth_google',
-        redirectUrl: '/sso-callback',
-        redirectUrlComplete: '/dashboard',
+        redirectUrl: '/blok-web/sso-callback',
+        redirectUrlComplete: '/blok-web/dashboard',
       });
     } catch (error) {
       console.error('Error signing in with Google:', error);

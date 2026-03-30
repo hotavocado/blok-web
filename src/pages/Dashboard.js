@@ -1,7 +1,9 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import { useClerk } from '@clerk/clerk-react';
+import { useClerk, useUser } from '@clerk/clerk-react';
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from 'convex/react';
+import { api } from '../convex/api';
 import LeftNav from '../components/LeftNav';
 import RiveAvatar from '../components/RiveAvatar';
 import MePage from './MePage';
@@ -12,7 +14,26 @@ import FriendsPage from './FriendsPage';
 const Dashboard = () => {
   const [currentPage, setCurrentPage] = React.useState('bloks');
   const { signOut } = useClerk();
+  const { isSignedIn, isLoaded } = useUser();
   const navigate = useNavigate();
+  const storeUser = useMutation(api.auth.store);
+
+  React.useEffect(() => {
+    if (isLoaded && !isSignedIn) {
+      navigate('/');
+    }
+  }, [isSignedIn, isLoaded, navigate]);
+
+  // Sync user to Convex when authenticated
+  React.useEffect(() => {
+    if (isSignedIn) {
+      storeUser();
+    }
+  }, [isSignedIn, storeUser]);
+
+  if (!isLoaded || !isSignedIn) {
+    return null;
+  }
 
   const handleSignOut = async () => {
     await signOut();

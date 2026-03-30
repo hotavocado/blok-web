@@ -195,69 +195,66 @@ $dark-theme: (
 // STATE LAYERS - Light/Dark Theme
 // ==================================================
 $state-layers-light: (
-  // Primary state layers
-  primary-008: rgba(95, 94, 91, 0.08),
-  // #5f5e5b14
-  primary-012: rgba(95, 94, 91, 0.12),
-  // #5f5e5b1e  
-  primary-016: rgba(95, 94, 91, 0.16),
-  // #5f5e5b28
+  // Primary state layers (light mode primary: #1e5dae)
+  primary-008: rgba(30, 93, 174, 0.08),
+  primary-012: rgba(30, 93, 174, 0.12),
+  primary-016: rgba(30, 93, 174, 0.16),
 
-  // On Primary state layers
+  // On Primary state layers (light mode on-primary: #ffffff)
   on-primary-008: rgba(255, 255, 255, 0.08),
   on-primary-012: rgba(255, 255, 255, 0.12),
   on-primary-016: rgba(255, 255, 255, 0.16),
 
-  // Primary Container state layers
-  primary-container-008: rgba(227, 226, 225, 0.08),
-  primary-container-012: rgba(227, 226, 225, 0.12),
-  primary-container-016: rgba(227, 226, 225, 0.16),
+  // Primary Container state layers (light mode primary-container: #d6e3ff)
+  primary-container-008: rgba(214, 227, 255, 0.08),
+  primary-container-012: rgba(214, 227, 255, 0.12),
+  primary-container-016: rgba(214, 227, 255, 0.16),
 
-  // On Primary Container state layers
-  on-primary-container-008: rgba(29, 27, 25, 0.08),
-  on-primary-container-012: rgba(29, 27, 25, 0.12),
-  on-primary-container-016: rgba(29, 27, 25, 0.16),
+  // On Primary Container state layers (light mode on-primary-container: #001b3e)
+  on-primary-container-008: rgba(0, 27, 62, 0.08),
+  on-primary-container-012: rgba(0, 27, 62, 0.12),
+  on-primary-container-016: rgba(0, 27, 62, 0.16),
 
-  // Surface state layers
-  on-surface-008: rgba(29, 27, 25, 0.08),
-  on-surface-012: rgba(29, 27, 25, 0.12),
-  on-surface-016: rgba(29, 27, 25, 0.16),
+  // Surface state layers (light mode on-surface: #1a1b1e)
+  on-surface-008: rgba(26, 27, 30, 0.08),
+  on-surface-012: rgba(26, 27, 30, 0.12),
+  on-surface-016: rgba(26, 27, 30, 0.16),
 
-  // Surface Variant state layers
-  on-surface-variant-008: rgba(72, 71, 68, 0.08),
-  on-surface-variant-012: rgba(72, 71, 68, 0.12),
-  on-surface-variant-016: rgba(72, 71, 68, 0.16)) !default;
+  // Surface Variant state layers (light mode on-surface-variant: #44474e)
+  on-surface-variant-008: rgba(68, 71, 78, 0.08),
+  on-surface-variant-012: rgba(68, 71, 78, 0.12),
+  on-surface-variant-016: rgba(68, 71, 78, 0.16)) !default;
 
 $state-layers-dark: (
-  // Primary state layers (dark)
-  primary-008: rgba(198, 198, 197, 0.08),
-  primary-012: rgba(198, 198, 197, 0.12),
-  primary-016: rgba(198, 198, 197, 0.16),
+  // Primary state layers (dark mode primary: #aac7ff)
+  primary-008: rgba(170, 199, 255, 0.08),
+  primary-012: rgba(170, 199, 255, 0.12),
+  primary-016: rgba(170, 199, 255, 0.16),
 
-  // On Primary state layers (dark)
-  on-primary-008: rgba(29, 27, 25, 0.08),
-  on-primary-012: rgba(29, 27, 25, 0.12),
-  on-primary-016: rgba(29, 27, 25, 0.16),
+  // On Primary state layers (dark mode on-primary: #003064)
+  on-primary-008: rgba(0, 48, 100, 0.08),
+  on-primary-012: rgba(0, 48, 100, 0.12),
+  on-primary-016: rgba(0, 48, 100, 0.16),
 
-  // Primary Container state layers (dark)
-  primary-container-008: rgba(72, 71, 68, 0.08),
-  primary-container-012: rgba(72, 71, 68, 0.12),
-  primary-container-016: rgba(72, 71, 68, 0.16),
+  // Primary Container state layers (dark mode primary-container: #00468d)
+  primary-container-008: rgba(0, 70, 141, 0.08),
+  primary-container-012: rgba(0, 70, 141, 0.12),
+  primary-container-016: rgba(0, 70, 141, 0.16),
 
-  // On Primary Container state layers (dark)
-  on-primary-container-008: rgba(227, 226, 225, 0.08),
-  on-primary-container-012: rgba(227, 226, 225, 0.12),
-  on-primary-container-016: rgba(227, 226, 225, 0.16),
+  // On Primary Container state layers (dark mode on-primary-container: #d6e3ff)
+  on-primary-container-008: rgba(214, 227, 255, 0.08),
+  on-primary-container-012: rgba(214, 227, 255, 0.12),
+  on-primary-container-016: rgba(214, 227, 255, 0.16),
 
-  // Surface state layers (dark)
-  on-surface-008: rgba(227, 226, 225, 0.08),
-  on-surface-012: rgba(227, 226, 225, 0.12),
-  on-surface-016: rgba(227, 226, 225, 0.16),
+  // Surface state layers (dark mode on-surface: #c7c6ca)
+  on-surface-008: rgba(199, 198, 202, 0.08),
+  on-surface-012: rgba(199, 198, 202, 0.12),
+  on-surface-016: rgba(199, 198, 202, 0.16),
 
-  // Surface Variant state layers (dark)
-  on-surface-variant-008: rgba(198, 198, 197, 0.08),
-  on-surface-variant-012: rgba(198, 198, 197, 0.12),
-  on-surface-variant-016: rgba(198, 198, 197, 0.16)) !default;
+  // Surface Variant state layers (dark mode on-surface-variant: #c4c6d0)
+  on-surface-variant-008: rgba(196, 198, 208, 0.08),
+  on-surface-variant-012: rgba(196, 198, 208, 0.12),
+  on-surface-variant-016: rgba(196, 198, 208, 0.16)) !default;
 
 $custom-state-layers: (
   blue-030: rgba(1, 82, 253, 0.3),
@@ -535,6 +532,11 @@ $dark-theme: (
   // Dark composite colors
   @each $key, $value in $composite-colors-dark {
     --color-composite-#{$key}: #{$value};
+  }
+
+  // Dark theme state layers
+  @each $key, $value in $state-layers-dark {
+    --state-layer-#{$key}: #{$value};
   }
 
   // Note: Palette variables remain the same in dark theme
