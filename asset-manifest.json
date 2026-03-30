@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/blok-web/static/css/main.e87e9ede.css",
+    "main.js": "/blok-web/static/js/main.663e3376.js",
+    "static/media/Jua-Regular.ttf": "/blok-web/static/media/Jua-Regular.03f46d33c377b251ab15.ttf",
+    "static/media/NotoSans-SemiBold.ttf": "/blok-web/static/media/NotoSans-SemiBold.99a8e0ebadf5af4c5e3d.ttf",
+    "static/media/NotoSans-Medium.ttf": "/blok-web/static/media/NotoSans-Medium.4ea329101279b68d9f28.ttf",
+    "static/media/NotoSans-Bold.ttf": "/blok-web/static/media/NotoSans-Bold.90c0409ffc455acef2a0.ttf",
+    "static/media/NotoSans-Light.ttf": "/blok-web/static/media/NotoSans-Light.4f78d44bd300d565d629.ttf",
+    "static/media/NotoSans-Regular.ttf": "/blok-web/static/media/NotoSans-Regular.9ab05beb031b68562995.ttf",
+    "static/media/users-line.svg": "/blok-web/static/media/users-line.d1586bf39ea27f6bde3f4d809724dcb0.svg",
+    "static/media/search-line.svg": "/blok-web/static/media/search-line.1398ad29cc0573a430652dd58116a1d8.svg",
+    "static/media/bloks-line.svg": "/blok-web/static/media/bloks-line.643cd69d9c3ab073f9a547de1bfe9913.svg",
+    "static/media/doublearrow-line.svg": "/blok-web/static/media/doublearrow-line.161982461da4d254a7fd4cc4d0dcc50f.svg",
+    "static/media/bloks-filled.svg": "/blok-web/static/media/bloks-filled.2b4edad332b8ac13c9993ba17e9a5d7c.svg",
+    "index.html": "/blok-web/index.html",
+    "static/media/users-filled.svg": "/blok-web/static/media/users-filled.226b56264151e9f02a5783802937c0c3.svg",
+    "static/media/search-filled.svg": "/blok-web/static/media/search-filled.d98fd92b49002a0cdd11d569ede3cb64.svg",
+    "main.e87e9ede.css.map": "/blok-web/static/css/main.e87e9ede.css.map",
+    "main.663e3376.js.map": "/blok-web/static/js/main.663e3376.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e87e9ede.css",
+    "static/js/main.663e3376.js"
+  ]
+}
