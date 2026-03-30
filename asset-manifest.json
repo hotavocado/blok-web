@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blok-web/static/css/main.e87e9ede.css",
-    "main.js": "/blok-web/static/js/main.590157a3.js",
+    "main.js": "/blok-web/static/js/main.83394558.js",
     "static/media/Jua-Regular.ttf": "/blok-web/static/media/Jua-Regular.03f46d33c377b251ab15.ttf",
     "static/media/NotoSans-SemiBold.ttf": "/blok-web/static/media/NotoSans-SemiBold.99a8e0ebadf5af4c5e3d.ttf",
     "static/media/NotoSans-Medium.ttf": "/blok-web/static/media/NotoSans-Medium.4ea329101279b68d9f28.ttf",
@@ -17,10 +17,10 @@
     "static/media/users-filled.svg": "/blok-web/static/media/users-filled.226b56264151e9f02a5783802937c0c3.svg",
     "static/media/search-filled.svg": "/blok-web/static/media/search-filled.d98fd92b49002a0cdd11d569ede3cb64.svg",
     "main.e87e9ede.css.map": "/blok-web/static/css/main.e87e9ede.css.map",
-    "main.590157a3.js.map": "/blok-web/static/js/main.590157a3.js.map"
+    "main.83394558.js.map": "/blok-web/static/js/main.83394558.js.map"
   },
   "entrypoints": [
     "static/css/main.e87e9ede.css",
-    "static/js/main.590157a3.js"
+    "static/js/main.83394558.js"
   ]
 }
